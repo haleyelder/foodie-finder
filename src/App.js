@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState } from "react";
+import Header from "./components/Header";
 
-function App() {
+
+function App({locations}) {
+  
+  // const [locations, setLocations] = useState(props.locations)
+  console.log(locations)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <div className="main">
+    <Header/>
+        <div className="location">
+          {locations.map((location) => (
+              <div key={location.id}>
+                Name: {location.name} 
+                <br></br>
+                Neighborhood: {location.neighborhood}
+                <br></br>
+                Type: {location.type}
+              </div>
+            ))}
+        </div>      
+      </div>
+    </>
   );
 }
 
-export default App;
+export default App
