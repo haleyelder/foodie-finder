@@ -165,7 +165,7 @@ const data = [
     },
     {
         id: 18,
-        name: "Brickhouse Coffee",
+        name: "Brickhaus Coffee",
         lat: "",
         long: "",
         type: "coffee", 
