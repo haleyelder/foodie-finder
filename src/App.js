@@ -1,14 +1,13 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 // import { useState } from "react";
 import Header from "./components/Header";
+import Location from "./components/Location";
 
-function App({ locations }) {
-  // const [locations, setLocations] = useState(props.locations)
-  // console.log(locations);
+import data from './locations'
 
+function App({locations}) {
   const position = [45.5152, -122.6784];
   const zoomLevel = 15;
-  console.log(locations)
   return (
     <>
       <div className="main">
@@ -20,7 +19,7 @@ function App({ locations }) {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {locations.map((location) => (
+          {data.map((location) => (
           <Marker 
             key={location.id}
             position={[location.lat, location.long]}
@@ -32,19 +31,8 @@ function App({ locations }) {
           ))} 
         </MapContainer>
 
-          {/* render complete list */}
-        {/* <div className="location">
-          {locations.map((location) => (
-            <div key={location.id}>
-              Name: {location.name}
-              <br></br>
-              location:
-              {location.lat} - {location.long}
-              <br></br>
-              Type: {location.type}
-            </div>
-          ))}
-        </div> */}
+        <Location locations={data} className="location"/>
+
       </div>
     </>
   );

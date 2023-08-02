@@ -1,14 +1,3 @@
-// template
-// {
-//     id: 1,
-//         name: "",
-//         lat: ,
-//         long: ,
-//         type: "", dessert, coffee, restaurant
-//         neighborhood: "", SE, NE, NW, DT, other? 
-//         visited: false, boolean
-// }
-
 const data = [
     {
         id: 1,
