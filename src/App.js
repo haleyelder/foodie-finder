@@ -7,13 +7,13 @@ import data from './locations'
 
 function App({locations}) {
   const position = [45.5152, -122.6784];
-  const zoomLevel = 15;
+  const zoomLevel = 11;
   return (
     <>
-      <div className="main">
+      <div>
         <Header />
-
-        <MapContainer center={position} zoom={zoomLevel} scrollWheelZoom={true}>
+        <div className="main">
+        {/* <MapContainer center={position} zoom={zoomLevel} scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -29,10 +29,10 @@ function App({locations}) {
             </Popup>
             </Marker>
           ))} 
-        </MapContainer>
+        </MapContainer> */}
 
         <Location locations={data} className="location"/>
-
+      </div>
       </div>
     </>
   );
