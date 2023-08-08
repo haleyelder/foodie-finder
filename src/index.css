@@ -19,6 +19,8 @@ header {
   width:30%;
   flex-grow: 1;
   margin-right: 20px;
+  height: 500px;
+  overflow-y: scroll;
 }
 
 .locations {
@@ -27,15 +29,14 @@ header {
   flex-direction: column;
 }
 
-.locations span {
-  justify-content: flex-start;
+.locations:nth-child(odd) {
+  background-color: lightgray;
 }
 
 .location-visited {
-  display: flex;
-  
-  /* align-/ */
+  align-self: flex-end;
 }
+
 .leaflet-container {
   flex-grow: 2;
   width: 60%;

@@ -7,7 +7,7 @@ import data from './locations'
 
 function App({locations}) {
   const position = [45.5152, -122.6784];
-  const zoomLevel = 11;
+  const zoomLevel = 12;
   return (
     <>
       <div>
