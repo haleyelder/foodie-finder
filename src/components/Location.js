@@ -7,11 +7,11 @@ export default function Location({locations}) {
             {locations.map((location) => (
 
                 <div key={location.id} className="locations">
-                    <span className="location-name">Name: {location.name}</span>
+                    <div className="location-name"><strong>{location.name}</strong> <span className="neighborhood"><em>- {location.neighborhood} </em></span></div>
                     
-                    <span className="location-coords">location: {location.lat} - {location.long}</span>
-                    <span className="location-type">Type: {location.type}</span>
-                    <span className="location-visited">visited: {String(location.visited) === "true" ? "✓" : "false"}</span>
+                    <div className="location-type"><em>{location.type}</em></div>
+                    <div className="location-coords">location: {location.lat} - {location.long}</div>
+                    <div className="location-visited">visited: {String(location.visited) === "true" ? "✓" : "false"}</div>
                  
                 </div>
             ))}

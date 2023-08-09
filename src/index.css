@@ -24,17 +24,30 @@ header {
 }
 
 .locations {
-  border: 1px solid red;
+  padding: 5px;
+  border: 1px solid lightgray;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
+}
+
+.locations div {
+  border: 1px solid red;
 }
 
 .locations:nth-child(odd) {
   background-color: lightgray;
 }
 
+.neighborhood {
+  font-size: 12px;
+}
+
+.location-type {
+  font-size: 12px;
+}
 .location-visited {
-  align-self: flex-end;
+  justify-content: flex-end;
 }
 
 .leaflet-container {
