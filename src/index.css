@@ -19,7 +19,7 @@ header {
   width:30%;
   flex-grow: 1;
   margin-right: 20px;
-  height: 500px;
+  height: 80vh;
   overflow-y: scroll;
 }
 
@@ -32,7 +32,7 @@ header {
 }
 
 .locations div {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .locations:nth-child(odd) {
@@ -53,5 +53,5 @@ header {
 .leaflet-container {
   flex-grow: 2;
   width: 60%;
-  height: 60vh;
+  height: 80vh;
 }
