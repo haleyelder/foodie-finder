@@ -10,7 +10,7 @@ body {
 .main {
   padding: 20px;
   display: flex;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
 }
 header {
   width: 100%;
