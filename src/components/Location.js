@@ -1,28 +1,51 @@
 import React, { useState } from "react";
 
 export default function Location({ locations }) {
-  const [location, setLocation] = useState(locations)
-  
-  function onHeaderClick(e) {
-    let type = e.target.textContent.toLowerCase();
-    
-    const sorted = [...locations].sort((a, b) =>
-    a[type] > b[type] ? 1 : b[type] > a[type] ? -1 : 0
-    );
-    setLocation(sorted);
-  }
-  
+  const [location, setLocation] = useState(locations);
+  const [toggle, setToggle] = useState(false);
 
+  // testing and update later, e taking over for "type", not as descriptive
+  const sortAsc = (e) => {
+    // console.log(e)
+    const sortedASC = [...locations].sort((a, b) =>
+      a[e] > b[e] ? 1 : b[e] > a[e] ? -1 : 0
+    );
+    setLocation(sortedASC);
+  };
+
+  const sortDesc = (e) => {
+    // let type = e.target.textContent.toLowerCase();
+    const sortedDESC = [...locations].sort((a, b) =>
+      a[e] < b[e] ? 1 : b[e] < a[e] ? -1 : 0
+    );
+    setLocation(sortedDESC);
+  };
 
   return (
     <>
       <table>
         <thead>
           <tr>
-            <th onClick={onHeaderClick}>Name</th>
-            <th onClick={onHeaderClick}>Neighborhood</th>
-            <th onClick={onHeaderClick}>Type</th>
-            <th onClick={onHeaderClick}>Visited</th>
+            <th>
+              <button onClick={() => sortAsc("name")}>ASC</button>
+              <button onClick={() => sortDesc("name")}>DESC</button>
+              Name
+            </th>
+            <th>
+              <button onClick={() => sortAsc("neighborhood")}>ASC</button>
+              <button onClick={() => sortDesc("neighborhood")}>DESC</button>
+              Neighborhood
+            </th>
+            <th>
+              <button onClick={() => sortAsc("type")}>ASC</button>
+              <button onClick={() => sortDesc("type")}>DESC</button>
+              Type
+            </th>
+            <th>
+              <button onClick={() => sortAsc("visited")}>ASC</button>
+              <button onClick={() => sortDesc("visited")}>DESC</button>
+              Visited
+            </th>
           </tr>
         </thead>
 
