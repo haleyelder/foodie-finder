@@ -10,14 +10,24 @@ body {
 .main {
   padding: 20px;
   display: flex;
-  /* flex-direction: row-reverse; */
+  flex-direction: row-reverse;
 }
 header {
   width: 100%;
 }
+
+.sorting-header {
+  border: 1px solid red;
+  /* display:flex; */
+}
+
+.sorting-sort{
+  border: 1px solid blue;
+}
 .location-list {
-  width:30%;
-  flex-grow: 1;
+  width:100%;
+  /* flex-grow: 1; */
+  margin-top:50px;
   margin-right: 20px;
   height: 80vh;
   overflow-y: scroll;
@@ -51,7 +61,7 @@ header {
 }
 
 .leaflet-container {
-  flex-grow: 2;
+  /* flex-grow: 2; */
   width: 60%;
   height: 80vh;
 }

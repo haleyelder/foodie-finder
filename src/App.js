@@ -12,7 +12,7 @@ function App({locations}) {
       <div>
         <Header />
         <div className="main">
-        {/* <MapContainer center={position} zoom={zoomLevel} scrollWheelZoom={true}>
+        <MapContainer center={position} zoom={zoomLevel} scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -28,7 +28,7 @@ function App({locations}) {
             </Popup>
             </Marker>
           ))} 
-        </MapContainer> */}
+        </MapContainer>
 
         <Location locations={data} className="location"/>
 
