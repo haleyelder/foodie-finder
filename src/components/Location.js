@@ -32,26 +32,27 @@ export default function Location({ locations }) {
     <>
       <div className="sorting-header">
         <div className="sorting-sort">
-          Name
+          <span> Name</span>
           <button onClick={() => sortAsc("name")}>↑ A</button>
           <button onClick={() => sortDesc("name")}>↓ D</button>
         </div>
         <div className="sorting-sort">
-          Neighborhood
+          <span>Neighborhood</span>
           <button onClick={() => sortAsc("neighborhood")}>↑ A</button>
           <button onClick={() => sortDesc("neighborhood")}>↓ D</button>
         </div>
         <div className="sorting-sort">
-          Type
+          <span>Type</span>
           <button onClick={() => sortAsc("type")}>↑ A</button>
           <button onClick={() => sortDesc("type")}>↓ D</button>
         </div>
         <div className="sorting-sort">
-          Visited
+          <span> Visited</span>
           <button onClick={() => sortAsc("visited")}>↑ A</button>
           <button onClick={() => sortDesc("visited")}>↓ D</button>
         </div>
       </div>
+
       <div className="location-list">
         {location.map((location) => (
           <div key={location.id} className="locations">
