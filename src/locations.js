@@ -250,6 +250,24 @@ const data = [
         type: "dessert", 
         neighborhood: "NE", 
         visited: true, 
+    },
+    {
+        id: 29,
+        name: "Urban Creperie",
+        lat: 45.5205,
+        long: -122.6845,
+        type: "restaurant", 
+        neighborhood: "DT", 
+        visited: false, 
+    },
+    {
+        id: 30,
+        name: "Hunny Milk",
+        lat: 45.5232,
+        long: -122.6946,
+        type: "restaurant", 
+        neighborhood: "DT", 
+        visited: false, 
     }
 ]
 
