@@ -2,25 +2,11 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 import Header from "./components/Header";
 import Location from "./components/Location";
-import data from './locations'
-// import iconCoffee from './components/Icons'
+import locationData from './locations'
+import Icons from './components/Icons'
 
-import L from 'leaflet';
+function App() {
 
-const iconCoffee = new L.Icon({
-    iconUrl: require('./images/coffee-icon.png'),
-    iconRetinaUrl: require('./images/coffee-icon.png'),
-    iconAnchor: null,
-    popupAnchor: null,
-    shadowUrl: null,
-    shadowSize: null,
-    shadowAnchor: null,
-    iconSize: [25,25]
-});
-
-// export default { iconCoffee };
-
-function App({locations}) {
   const position = [45.5152, -122.6784];
   const zoomLevel = 12;
   return (
@@ -34,11 +20,11 @@ function App({locations}) {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {data.map((location) => (
+          {locationData.map((location) => (
           <Marker 
             key={location.id}
             position={[location.lat, location.long]}
-            icon = {iconCoffee}
+            icon = {Icons}
             >
             <Popup>
               {location.name}
@@ -47,7 +33,7 @@ function App({locations}) {
           ))} 
         </MapContainer>
 
-        <Location locations={data} className="location"/>
+        <Location locations={locationData} className="location"/>
 
       </div>
       </div>

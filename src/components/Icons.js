@@ -1,14 +1,23 @@
-import L from 'leaflet';
+import L from "leaflet";
+import locationData from "../locations";
 
-const iconCoffee = new L.Icon({
-    iconUrl: require('../images/coffee-icon.png'),
-    iconRetinaUrl: require('../images/coffee-icon.png'),
-    iconAnchor: null,
-    popupAnchor: null,
-    shadowUrl: null,
-    shadowSize: null,
-    shadowAnchor: null,
-    iconSize: [30,30]
+const coffeeIcon = new L.Icon({
+  iconUrl: require("../images/coffee-icon.png"),
+  iconSize: [30, 30],
 });
 
-export default { iconCoffee };
+const restaurantIcon = new L.Icon({
+  iconUrl: require("../images/restaurant-icon.png"),
+  iconSize: [30, 30],
+});
+
+const dessertIcon = new L.Icon({
+  iconUrl: require("../images/dessert-icon.png"),
+  iconSize: [30, 30],
+});
+
+const icon = locationData.filter((location) => 
+    location.type == "coffee"
+)
+
+export default coffeeIcon;
