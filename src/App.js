@@ -5,15 +5,18 @@ import Location from "./components/Location";
 import locationData from './locations'
 import Icons from './components/Icons'
 
+
 function App() {
 
   const position = [45.5152, -122.6784];
   const zoomLevel = 12;
+
   return (
     <>
       <div>
         <Header />
         <div className="main">
+
         <MapContainer center={position} zoom={zoomLevel} scrollWheelZoom={true}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -21,15 +24,16 @@ function App() {
           />
 
           {locationData.map((location) => (
-          <Marker 
-            key={location.id}
-            position={[location.lat, location.long]}
-            icon = {Icons}
-            >
-            <Popup>
-              {location.name}
-            </Popup>
-            </Marker>
+
+            <Marker 
+                key={location.id}
+                position={[location.lat, location.long]}
+                icon = {Icons}
+              >
+                <Popup>
+                  {location.name}
+                </Popup>
+              </Marker>
           ))} 
         </MapContainer>
 

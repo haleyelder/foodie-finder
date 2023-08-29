@@ -7,6 +7,7 @@ const data = [
         type: "dessert",
         neighborhood: "SE",
         visited: false,
+        icon: '../src/images/dessert-icon.png'
     },
     {
         id: 2,
