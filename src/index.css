@@ -50,9 +50,24 @@ header {
 
 .location-type {
   font-size: 12px;
+  margin: 0 5px;
+}
+.location-directions a {
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.location-directions a:visited {
+  color: blue;
+}
+
+.location-directions a:hover {
+  text-decoration: underline;
 }
 .location-visited {
-  justify-content: flex-end;
+  font-weight: 800;
+  padding: 0 3px;
+  color: green;
 }
 
 .leaflet-container {

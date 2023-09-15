@@ -25,7 +25,7 @@ export default function Location({ locations }) {
     const copiedText = e.target.innerText;
     navigator.clipboard.writeText(copiedText);
     // convert to tooltip eventually, confirm
-    // console.log(copiedText + ' copied!')
+    console.log(copiedText + " copied!");
   };
 
   return (
@@ -57,20 +57,24 @@ export default function Location({ locations }) {
         {location.map((location) => (
           <div key={location.id} className="locations">
             <div className="location-name" onClick={handleClickCopyText}>
+              <span className="location-visited">
+                {String(location.visited) === "true" ? "✓" : ""}
+              </span>
               <strong>{location.name}</strong>{" "}
               <span className="neighborhood">
                 <em>- {location.neighborhood} </em>
               </span>
             </div>
-
+            {/* TODO: UPDATE TO BUSINESS NAME HOPEFULY */}
+            <div className="location-directions">
+              <a
+                href={
+                  "https://www.google.com/maps?saddr=My+Location&daddr=" +location.lat +"," +location.long} target="_blank">
+                directions
+              </a> - icon?
+            </div>
             <div className="location-type">
               <em>{location.type}</em>
-            </div>
-            <div className="location-coords">
-              location: {location.lat} - {location.long}
-            </div>
-            <div className="location-visited">
-              visited: {String(location.visited) === "true" ? "✓" : "false"}
             </div>
           </div>
         ))}
