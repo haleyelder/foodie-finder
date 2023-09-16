@@ -6,10 +6,6 @@ import locationData from "./locations";
 
 import L from "leaflet";
 
-const coffeeImg = require("./images/coffee-icon.png");
-const restaurantImg = require("./images/restaurant-icon.png");
-const dessertImg = require("./images/dessert-icon.png");
-
 const GetIcon = (locationType) => {
   return L.icon({
     iconUrl: require(`./images/${locationType}-icon.png`),

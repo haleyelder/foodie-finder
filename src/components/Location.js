@@ -1,26 +1,33 @@
 import React, { useState } from "react";
 
+// TODO: move functions to a util file?
+// clean up location usage data, App structure and Locations component duplicating
+
 export default function Location({ locations }) {
   const [location, setLocation] = useState(locations);
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
+  const [sortDirection, setSortDirection] = useState("sort");
+  // - reset sort button (default state)
 
-  // testing and update later, e taking over for "type", not as descriptive
-  const sortAsc = (e) => {
-    const sortedASC = [...locations].sort((a, b) =>
-      a[e] > b[e] ? 1 : b[e] > a[e] ? -1 : 0
-    );
-    setLocation(sortedASC);
+  const toggleClick = (sort) => {
+    setToggle(!toggle);
+
+    if (toggle === true) {
+      const sortedASC = [...locations].sort((a, b) =>
+        a[sort] > b[sort] ? 1 : b[sort] > a[sort] ? -1 : 0
+      );
+      setLocation(sortedASC);
+      setSortDirection("↑ A");
+    } else {
+      const sortedDESC = [...locations].sort((a, b) =>
+        a[sort] < b[sort] ? 1 : b[sort] < a[sort] ? -1 : 0
+      );
+      setLocation(sortedDESC);
+      setSortDirection("↓ D");
+    }
   };
 
-  const sortDesc = (e) => {
-    // let type = e.target.textContent.toLowerCase();
-    const sortedDESC = [...locations].sort((a, b) =>
-      a[e] < b[e] ? 1 : b[e] < a[e] ? -1 : 0
-    );
-    setLocation(sortedDESC);
-  };
-
-  //   // copy to clipboard
+  // copy to clipboard
   const handleClickCopyText = (e) => {
     const copiedText = e.target.innerText;
     navigator.clipboard.writeText(copiedText);
@@ -30,26 +37,25 @@ export default function Location({ locations }) {
 
   return (
     <>
+      <div>
+        <button>Reset</button>
+      </div>
       <div className="sorting-header">
         <div className="sorting-sort">
           <span> Name</span>
-          <button onClick={() => sortAsc("name")}>↑ A</button>
-          <button onClick={() => sortDesc("name")}>↓ D</button>
+          <button onClick={() => toggleClick("name")}>{sortDirection}</button>
         </div>
         <div className="sorting-sort">
           <span>Neighborhood</span>
-          <button onClick={() => sortAsc("neighborhood")}>↑ A</button>
-          <button onClick={() => sortDesc("neighborhood")}>↓ D</button>
+          <button onClick={() => toggleClick("neighborhood")}>{sortDirection}</button>
         </div>
         <div className="sorting-sort">
           <span>Type</span>
-          <button onClick={() => sortAsc("type")}>↑ A</button>
-          <button onClick={() => sortDesc("type")}>↓ D</button>
+          <button onClick={() => toggleClick("type")}>{sortDirection}</button>
         </div>
         <div className="sorting-sort">
           <span> Visited</span>
-          <button onClick={() => sortAsc("visited")}>↑ A</button>
-          <button onClick={() => sortDesc("visited")}>↓ D</button>
+          <button onClick={() => toggleClick("visited")}>{sortDirection}</button>
         </div>
       </div>
 
@@ -69,9 +75,16 @@ export default function Location({ locations }) {
             <div className="location-directions">
               <a
                 href={
-                  "https://www.google.com/maps?saddr=My+Location&daddr=" +location.lat +"," +location.long} target="_blank">
+                  "https://www.google.com/maps?saddr=My+Location&daddr=" +
+                  location.lat +
+                  "," +
+                  location.long
+                }
+                target="_blank"
+              >
                 directions
-              </a> - icon?
+              </a>{" "}
+              - new tab icon
             </div>
             <div className="location-type">
               <em>{location.type}</em>
