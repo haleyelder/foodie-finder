@@ -22,6 +22,7 @@ function App() {
       <div>
         <Header />
         <div className="main">
+          <Location locations={locationData} className="location" />
           <MapContainer
             center={position}
             zoom={zoomLevel}
@@ -42,9 +43,8 @@ function App() {
               </Marker>
             ))}
           </MapContainer>
-
-          <Location locations={locationData} className="location" />
         </div>
+        <footer>Haley Elder | &copy; 2023</footer>
       </div>
     </>
   );

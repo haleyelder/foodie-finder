@@ -9,8 +9,15 @@ body {
 }
 
 .main {
-  padding: 20px;
+  padding: 0 0 0 25px;
 }
+
+.leaflet-container {
+  width: 60%;
+  height: 80vh;
+  display:inline-block;
+}
+
 header {
   width: 100%;
   background-color: #7e6551ff;
@@ -19,18 +26,36 @@ header {
 
 .sorting-header {
   height: 30px;
-  width: 35%;
+  width:40%;
 }
 
 .sorting-sort{
-  float: left;
+  display: inline;
+  margin-left: 20px;
+}
+
+.sorting-sort:hover {
+  font-weight: 700;
+  cursor:pointer;
+}
+
+.sorting-header span {
+  background-color: lightgray;
+  padding: 1px 5px;
+  border-radius: 1px;
+  margin: 1px 3px 0 2px;
+}
+
+.sorting-header button {
+  padding: 3px 5px;
 }
 .location-list {
   width: 35%;
-  margin-top:50px;
-  margin-right: 20px;
+  margin-top:14px;
+  margin-right:20px;
   height: 80vh;
   overflow-y: scroll;
+  display:inline-block;
 }
 
 .locations {
@@ -68,10 +93,4 @@ header {
   font-weight: 800;
   padding: 0 3px;
   color: green;
-}
-
-.leaflet-container {
-  width: 60%;
-  height: 80vh;
-  float:right;
 }

@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 
-// TODO: move functions to a util file?
-// clean up location usage data, App structure and Locations component duplicating
 
 export default function Location({ locations }) {
   const [location, setLocation] = useState(locations);
   const [toggle, setToggle] = useState(true);
-  const [sortDirection, setSortDirection] = useState("sort");
-  // - reset sort button (default state)
+  const [sortDirection, setSortDirection] = useState("Sort");
 
   const toggleClick = (sort) => {
     setToggle(!toggle);
@@ -27,6 +24,10 @@ export default function Location({ locations }) {
     }
   };
 
+  const resetClick = () => {
+    setLocation(locations);
+    setSortDirection("Sort")
+  };
   // copy to clipboard
   const handleClickCopyText = (e) => {
     const copiedText = e.target.innerText;
@@ -37,28 +38,23 @@ export default function Location({ locations }) {
 
   return (
     <>
-      <div>
-        <button>Reset</button>
-      </div>
       <div className="sorting-header">
-        <div className="sorting-sort">
-          <span> Name</span>
-          <button onClick={() => toggleClick("name")}>{sortDirection}</button>
+        <div className="sorting-sort" onClick={() => toggleClick("name")}>
+          Name
         </div>
-        <div className="sorting-sort">
-          <span>Neighborhood</span>
-          <button onClick={() => toggleClick("neighborhood")}>{sortDirection}</button>
+        <div className="sorting-sort" onClick={() => toggleClick("neighborhood")}>
+          Neighborhood
         </div>
-        <div className="sorting-sort">
-          <span>Type</span>
-          <button onClick={() => toggleClick("type")}>{sortDirection}</button>
+        <div className="sorting-sort" onClick={() => toggleClick("type")}>
+          Type
         </div>
-        <div className="sorting-sort">
-          <span> Visited</span>
-          <button onClick={() => toggleClick("visited")}>{sortDirection}</button>
-        </div>
+        <div className="sorting-sort" onClick={() => toggleClick("visited")}>
+          Visited
+        </div>{" "}
+        <span> {sortDirection}</span>
+        <button onClick={resetClick}>Reset</button>
       </div>
-
+  
       <div className="location-list">
         {location.map((location) => (
           <div key={location.id} className="locations">
@@ -66,12 +62,15 @@ export default function Location({ locations }) {
               <span className="location-visited">
                 {String(location.visited) === "true" ? "✓" : ""}
               </span>
-              <strong>{location.name}</strong>{" "}
+              <strong>
+                <span className="hover-text"></span>
+                {location.name}
+              </strong>{" "}
               <span className="neighborhood">
                 <em>- {location.neighborhood} </em>
               </span>
             </div>
-            {/* TODO: UPDATE TO BUSINESS NAME HOPEFULY */}
+            {/* TODO: UPDATE TO BUSINESS NAME HOPEFULLY */}
             <div className="location-directions">
               <a
                 href={
@@ -81,6 +80,7 @@ export default function Location({ locations }) {
                   location.long
                 }
                 target="_blank"
+                rel="noreferrer"
               >
                 directions
               </a>{" "}
