@@ -1,4 +1,4 @@
-## Foodie Finder - working title
+## Cafe Quest
 
 React Leaflet project outlining coffee shops, restaurants, and etc places I want to visit around the Portland Metro area. 
 

@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <>
       <header>
-        <h1>Foodie Finder</h1>
+        <h1>Cafe Quest</h1>
       </header>
       <div>
         <ul>
