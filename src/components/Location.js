@@ -39,20 +39,20 @@ export default function Location({ locations }) {
   return (
     <>
       <div className="sorting-header">
-        <div className="sorting-sort" onClick={() => toggleClick("name")}>
+        <button className="sorting-button" onClick={() => toggleClick("name")}>
           Name
-        </div>
-        <div className="sorting-sort" onClick={() => toggleClick("neighborhood")}>
+        </button>
+        <button className="sorting-button" onClick={() => toggleClick("neighborhood")}>
           Neighborhood
-        </div>
-        <div className="sorting-sort" onClick={() => toggleClick("type")}>
+        </button>
+        <button className="sorting-button" onClick={() => toggleClick("type")}>
           Type
-        </div>
-        <div className="sorting-sort" onClick={() => toggleClick("visited")}>
+        </button>
+        <button className="sorting-button" onClick={() => toggleClick("visited")}>
           Visited
-        </div>{" "}
-        <span> {sortDirection}</span>
-        <button onClick={resetClick}>Reset</button>
+        </button>
+        <button className="sorting-button" onClick={resetClick}>Reset</button>
+        <div>{sortDirection}</div>
       </div>
   
       <div className="location-list">

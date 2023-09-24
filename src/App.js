@@ -16,6 +16,7 @@ const GetIcon = (locationType) => {
 function App() {
   const position = [45.5152, -122.6784];
   const zoomLevel = 12;
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
@@ -44,7 +45,7 @@ function App() {
             ))}
           </MapContainer>
         </div>
-        <footer>Haley Elder | &copy; 2023</footer>
+        <footer>Haley Elder | &copy; {currentYear} </footer>
       </div>
     </>
   );
