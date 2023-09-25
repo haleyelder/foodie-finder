@@ -13,7 +13,7 @@ body {
 }
 
 .leaflet-container {
-  width: 60%;
+  width: 65%;
   height: 80vh;
   display:inline-block;
 }
@@ -41,32 +41,39 @@ header {
 .sorting-button{
   display: inline;
   margin-right: 10px;
+  font-weight: 600;
+  border: none;
+}
+
+.sorting-button:hover {
+  border: none;
+  border-bottom: 5px solid #436585;
 }
 
 .sorting-header div {
+  display: inline;
+  border: 1px solid black;
+  line-height: 10px;
+}
+
+.sorting-reset, .sorting-header .sorting-direction {
   display: inline;
   background-color: #f0f0f0;
   padding: 4px 8px 8px 8px;
   border-radius: 2px;
   border: 2px solid #436585;
-  margin-left: 2px;
+  margin-left: 7px;
 }
 
 .sorting-header button {
   padding: 8px;
   border-radius: 4px;
   font-size: 16px;
+  cursor:pointer;
 }
-.sorting-button {
-  border: none;
-}
-.sorting-button:hover {
-  border: none;
-  border-bottom: 5px solid #436585;
 
-}
 .location-list {
-  width: 35%;
+  width: 32%;
   margin-right:20px;
   height: 80vh;
   overflow-y: scroll;
@@ -79,35 +86,54 @@ header {
   background-color: #ececec;
 
 }
-
 .locations:nth-child(odd) {
   background-color: #C5D5E4;
 }
 
-.neighborhood {
+.location-name {
+  width: fit-content;
+  font-size: 18px;
+}
+.location-name:hover {
+  cursor:pointer;
+}
+
+.location-neighborhood {
   font-size: 12px;
+}
+
+.location-neighborhood:hover {
+  cursor: default;
 }
 
 .location-type {
-  font-size: 12px;
-  margin: 0 5px;
+  font-size: 15px;
+}
+
+.location-directions, .location-type {
+  margin-left: 4px;
 }
 .location-directions a {
   text-decoration: none;
-  margin-left: 5px;
+  color: #01502e;
+  font-weight: 600;
 }
 
 .location-directions a:visited {
-  color: blue;
+  color: #01502e;
 }
 
 .location-directions a:hover {
   text-decoration: underline;
 }
+
+.location-directions i {
+  font-size: 11px;
+}
 .location-visited {
   font-weight: 800;
-  padding: 0 3px;
   color: green;
+  margin-right: 4px;
 }
 
 footer {

@@ -8,13 +8,14 @@ import L from "leaflet";
 
 const GetIcon = (locationType) => {
   return L.icon({
-    iconUrl: require(`./images/${locationType}-icon.png`),
-    iconSize: [30, 30],
+    iconUrl: require(`./images/${locationType}-icon-2.png`),
+    iconSize: [25,40]
   });
 };
 
 function App() {
-  const position = [45.5152, -122.6784];
+  // const position = [45.5152, -122.6784];
+  const position = [45.528144, -122.664013]
   const zoomLevel = 12;
   const currentYear = new Date().getFullYear();
 
