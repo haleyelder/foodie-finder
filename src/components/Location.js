@@ -27,14 +27,6 @@ export default function Location({ locations }) {
     setLocation(locations);
     setSortDirection("Sort");
   };
-  // copy to clipboard
-  const handleClickCopyText = (e) => {
-    const copiedText = e.target.innerText;
-    navigator.clipboard.writeText(copiedText);
-
-    // convert to tooltip eventually, confirm
-    console.log(copiedText + " copied!");
-  };
 
   return (
     <>
@@ -67,24 +59,18 @@ export default function Location({ locations }) {
       <div className="location-list">
         {location.map((location) => (
           <div key={location.id} className="locations">
-            <div className="location-name" onClick={handleClickCopyText}>
+            <div className="location-name">
               <span className="location-visited">
                 {String(location.visited) === "true" ? "✓" : ""}
               </span>
-              <strong>{location.name}</strong>
-              {" "}
+              <strong>{location.name}</strong>{" "}
               <span className="location-neighborhood">
                 <em> - {location.neighborhood} </em>
               </span>
             </div>
             <div className="location-directions">
               <a
-                href={
-                  "https://www.google.com/maps?daddr=" +
-                  location.lat +
-                  "," +
-                  location.long
-                }
+                href={"https://www.google.com/maps?daddr=" + location.name}
                 target="_blank"
                 rel="noreferrer"
               >

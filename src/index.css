@@ -94,9 +94,6 @@ header {
   width: fit-content;
   font-size: 18px;
 }
-.location-name:hover {
-  cursor:pointer;
-}
 
 .location-neighborhood {
   font-size: 12px;
