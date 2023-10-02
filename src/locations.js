@@ -269,6 +269,15 @@ const data = [
     neighborhood: "DT",
     visited: false,
   },
+  {
+    id: 31,
+    name: "AFURI ramen + dumpling Beaverton",
+    lat: 45.4865,
+    long: -122.8082,
+    type: "restaurant",
+    neighborhood: "Other",
+    visited: true
+  }
 ];
 
 export default data;

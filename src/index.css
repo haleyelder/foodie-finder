@@ -28,8 +28,13 @@ header {
 
 .description {
   background-color: #436585;
-  padding: 8px 25px;
+  padding: 8px 65px;
   color: #e9e2e2;
+}
+
+.coming-soon {
+  font-style:italic;
+  text-align: center;
 }
 
 .sorting-header {
@@ -138,9 +143,38 @@ footer {
   padding: 10px 0;
 }
 
-/* MOBILE STYLING */
-/* @media (max-width: 480px) {
-  div {
-    border: 1px solid red;
+ @media (max-width: 425px) {
+  header {
+    padding: 1px 0;
   }
-} */
+  .description {
+    padding: 10px;
+  }
+
+  .sorting-header button {
+    padding: 5px;
+    font-size: 14px;
+    margin: 5px 8px;
+  }
+
+  .sorting-header div{
+    display: none;
+  }
+  .sorting-header .sorting-reset {
+    margin-left: 105px;
+  }
+  .sorting-header .sorting-direction {
+    margin-left: 4px;
+    padding: 3px 5px;
+  }
+  .location-list {
+    width: 90%;
+    margin: 40px 0 5px;
+    height: 50vh;
+  }
+  .leaflet-container {
+    width: 90%;
+    height: 50vh;
+  }
+
+}
