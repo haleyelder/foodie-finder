@@ -1,15 +1,18 @@
+import About from "./About";
+
 export default function Header() {
   return (
     <>
       <header>
         <h1>Cafe Quest</h1>
+        <p> where will your next quest take you?</p>
+        <div className="about">
+          <button className="hover-about">About</button>
+          <div className="hide">
+            <About />
+          </div>
+        </div>
       </header>
-      <div className="description">
-        <p> Cafe Quest is a visual listing of restaurants, coffee shops, and dessert spots mentioned, or I came across, around the Portland, OR metro area. This is not the <em>full</em> list, but it's a start and it will grow.</p>
-        <p>The list can be sorted by clicking to toggle the top four buttons in ascending or descending order, and a reset button to the original list. If you want to visit any yourself, click 'directions' below the name and it will open Google Maps with the location filled in. </p>
-        <p className="coming-soon"> There will be some additional tweaks coming, so stay tuned! </p>
-        
-      </div>
     </>
   );
 }

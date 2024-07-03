@@ -1,10 +1,13 @@
 ## Cafe Quest
 
-React Leaflet project outlining coffee shops, restaurants, and etc places I want to visit around the Portland Metro area. 
+[Live Link](https://cafe-quest.onrender.com/)
+
+React Leaflet project highlighting coffee shops, restaurants, and dessert spots I've been recommended, or want to visit, around the Portland Metro area.
+
 
 Tidbits ::
-- main: react leaflet map
-- left side of listings that are filterable by type and alpha, neighborhood 
+- Main: React Leaflet map with custom icons per restaurant type
+- Full listing of places to the left that can be sorted by type, alpha (asc/desc), and neighborhood
 
 Enhancements, etc ::
 - [ ] tweak custom icons per location a bit more (dessert, coffee, restaurant)
@@ -14,5 +17,9 @@ Enhancements, etc ::
 - [ ] incorporate util functions file?
 - [ ] refactor/add back in copy location name to paste
 
-- [ ] restyle header, font pick or graphics  
+- [ ] restyle header, font pick or graphics
 - [ ] mobile responsive styling
+
+Changelog -- V2
+
+V1

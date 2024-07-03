@@ -173,10 +173,10 @@ const data = [
   {
     id: 20,
     name: "Mikiko Mochi Donuts",
-    lat: 45.5252,
-    long: -122.637,
+    lat: 45.4915,
+    long: -122.8279,
     type: "dessert",
-    neighborhood: "SE",
+    neighborhood: "Other",
     visited: false,
   },
   {
@@ -277,7 +277,63 @@ const data = [
     type: "restaurant",
     neighborhood: "Other",
     visited: true
+  },
+  {
+    id: 32,
+    name: "Palomar",
+    lat: 45.5053,
+    long: -122.6564,
+    type: "restaurant",
+    neighborhood: "SE",
+    visited: false
+  },
+  {
+    id: 33,
+    name: "Jade Rabbit at the Emerald Room",
+    lat: 45.5288,
+    long: -122.6439,
+    type: "restaurant",
+    neighborhood: "SE",
+    visited: false
+  },
+  {
+    id: 34,
+    name: "Roasted by Mom",
+    lat: 45.5337,
+    long: -122.8983,
+    type: "coffee",
+    neighborhood: "Other",
+    visited: false
+  },
+  {
+    id: 35,
+    name: "Dos Hermanos",
+    lat: 45.5194,
+    long: -122.6554,
+    type: "coffee",
+    neighborhood: "Other",
+    visited: false
+  },
+  {
+    id: 36,
+    name: "Wei Wei - A Taste of Taiwan",
+    lat: 45.4681,
+    long: -122.6533,
+    type: "restaurant",
+    neighborhood: "SE",
+    visited: false
+  },
+  {
+    id: 37,
+    name: "Eem - Thai BBQ & Cocktails",
+    lat: 45.55061,
+    long: -122.6665,
+    type: "restaurant",
+    neighborhood: "SE",
+    visited: false
   }
+
+
 ];
 
 export default data;

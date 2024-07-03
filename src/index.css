@@ -28,9 +28,24 @@ header {
 
 .description {
   background-color: #436585;
-  padding: 8px 65px;
+  padding: 10px;
   color: #e9e2e2;
+  width: 300px;
+  position: fixed;
 }
+
+.about {
+  padding: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.hover-about:hover + .hide {
+  display: block;
+}
+
 
 .coming-soon {
   font-style:italic;
@@ -39,7 +54,7 @@ header {
 
 .sorting-header {
   margin-top:8px;
-  height: 42px;
+  height: 68px;
   padding: 10px 0;
 }
 
@@ -76,6 +91,8 @@ header {
   font-size: 16px;
   cursor:pointer;
 }
+
+
 
 .location-list {
   width: 32%;

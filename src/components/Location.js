@@ -28,6 +28,7 @@ export default function Location({ locations }) {
     setSortDirection("Sort");
   };
 
+
   return (
     <>
       <div className="sorting-header">
@@ -55,6 +56,8 @@ export default function Location({ locations }) {
         </button>
         <div className="sorting-direction">{sortDirection}</div>
       </div>
+
+
 
       <div className="location-list">
         {location.map((location) => (
