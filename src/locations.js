@@ -326,14 +326,21 @@ const data = [
   {
     id: 37,
     name: "Eem - Thai BBQ & Cocktails",
-    lat: 45.55061,
+    lat: 45.5506,
     long: -122.6665,
     type: "restaurant",
     neighborhood: "SE",
     visited: false
+  },
+  {
+    id: 38,
+    name: "Double Dragon",
+    lat: 45.5049,
+    long:-122.7356,
+    type: "restaurant",
+    neighborhood: "SE",
+    visited: true
   }
-
-
 ];
 
 export default data;
