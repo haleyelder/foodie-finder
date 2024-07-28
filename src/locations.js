@@ -336,11 +336,12 @@ const data = [
     id: 38,
     name: "Double Dragon",
     lat: 45.5049,
-    long:-122.7356,
+    long: -122.6532,
     type: "restaurant",
     neighborhood: "SE",
     visited: true
   }
 ];
+
 
 export default data;

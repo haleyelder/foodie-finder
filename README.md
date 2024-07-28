@@ -10,7 +10,7 @@ Tidbits ::
 - Full listing of places to the left that can be sorted by type, alpha (asc/desc), and neighborhood
 
 Enhancements, etc ::
-- [ ] tweak custom icons per location a bit more (dessert, coffee, restaurant)
+- [x] tweak custom icons per location a bit more (dessert, coffee, restaurant)
 - [ ] clicking the location on the list will highlight on the map (vice versa?)
 
 - [ ] refactor locations/state usage (repetitive)

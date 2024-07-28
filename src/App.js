@@ -8,7 +8,7 @@ import L from "leaflet";
 
 const GetIcon = (locationType) => {
   return L.icon({
-    iconUrl: require(`./images/${locationType}-icon-2.png`),
+    iconUrl: require(`./images/${locationType}-icon-1.png`),
     iconSize: [25, 40],
   });
 };
@@ -19,19 +19,20 @@ function App() {
   const zoomLevel = 12;
   const currentYear = new Date().getFullYear();
 
+  console.log(locationData)
   return (
     <>
       <div>
       <header>
         <h1>Cafe Quest</h1>
         <ul
-          class="nav nav-pills justify-content-center"
+          className="nav nav-pills justify-content-center"
           id="pills-tab"
           role="tablist"
         >
-          <li class="nav-item" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link"
+              className="nav-link"
               id="pills-home-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-home"
@@ -43,9 +44,9 @@ function App() {
               Map
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li className="nav-item" role="presentation">
             <button
-              class="nav-link"
+              className="nav-link"
               id="pills-about-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-about"
@@ -59,15 +60,15 @@ function App() {
           </li>
         </ul>
       </header>
-        <div class="tab-content" id="pills-tabContent">
+        <div className="tab-content" id="pills-tabContent">
           <div
-            class="tab-pane fade show active"
+            className="tab-pane fade show active"
             id="pills-home"
             role="tabpanel"
             aria-labelledby="pills-home-tab"
           >
             <div
-              class="tab-pane show active"
+              className="tab-pane show active"
               id="map"
               role="tabpanel"
               aria-labelledby="map-tab"
@@ -98,7 +99,7 @@ function App() {
             </div>
           </div>
           <div
-            class="tab-pane"
+            className="tab-pane"
             id="pills-about"
             role="tabpanel"
             aria-labelledby="pills-about-tab"
