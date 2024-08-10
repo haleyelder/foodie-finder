@@ -37,16 +37,22 @@ header {
   font-weight: 600;
 }
 
-/* .nav-pills .nav-link:hover {
-  border: none;
-  border-bottom: 4px solid #436585;
-} */
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-  background:none;
-  color: black;
-
+.header-graphic {
+  width: 300px;
+  margin: 0 auto;
 }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background: none;
+  color: black;
+}
+
+.nav-pills .nav-item:hover {
+  border-bottom: 4px solid #436585;
+  padding: 0;
+}
+
 .description {
   background-color: #436585;
   padding: 20px;
@@ -157,6 +163,10 @@ header {
   font-weight: 800;
   color: green;
   margin-right: 4px;
+}
+
+.marker-check {
+  color: darkgreen;
 }
 
 footer {

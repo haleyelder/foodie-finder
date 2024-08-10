@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import About from "./components/About";
 import Location from "./components/Location";
 import locationData from "./locations";
+import headerimg from "./images/header-map.png";
 
 import L from "leaflet";
 
@@ -14,52 +15,56 @@ const GetIcon = (locationType) => {
 };
 
 function App() {
-  // const position = [45.5152, -122.6784];
   const position = [45.528144, -122.664013];
   const zoomLevel = 12;
   const currentYear = new Date().getFullYear();
 
-  console.log(locationData)
   return (
     <>
       <div>
-      <header>
-        <h1>Cafe Quest</h1>
-        <ul
-          className="nav nav-pills justify-content-center"
-          id="pills-tab"
-          role="tablist"
-        >
-          <li className="nav-item" role="presentation">
-            <button
-              className="nav-link"
-              id="pills-home-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-home"
-              type="button"
-              role="tab"
-              aria-controls="pills-home"
-              aria-selected="true"
-            >
-              Map
-            </button>
-          </li>
-          <li className="nav-item" role="presentation">
-            <button
-              className="nav-link"
-              id="pills-about-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-about"
-              type="button"
-              role="tab"
-              aria-controls="pills-about"
-              aria-selected="false"
-            >
-              About
-            </button>
-          </li>
-        </ul>
-      </header>
+        <header>
+          <div class="header-graphic">
+            <img
+              class="img-fluid"
+              src={headerimg}
+              alt="Cafe Quest map graphic"
+            />
+          </div>
+          <ul
+            className="nav nav-pills justify-content-center"
+            id="pills-tab"
+            role="tablist"
+          >
+            <li className="nav-item" role="presentation">
+              <button
+                className="nav-link"
+                id="pills-home-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-home"
+                type="button"
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+              >
+                Map
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className="nav-link"
+                id="pills-about-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-about"
+                type="button"
+                role="tab"
+                aria-controls="pills-about"
+                aria-selected="false"
+              >
+                About
+              </button>
+            </li>
+          </ul>
+        </header>
         <div className="tab-content" id="pills-tabContent">
           <div
             className="tab-pane fade show active"
@@ -91,7 +96,16 @@ function App() {
                       position={[location.lat, location.long]}
                       icon={GetIcon(location.type)}
                     >
-                      <Popup>{location.name}</Popup>
+                      <Popup>
+                        {" "}
+                        {String(location.visited) === "true" ? (
+                          <span className="marker-check">
+                            {location.name} ✓
+                          </span>
+                        ) : (
+                          `${location.name}`
+                        )}
+                      </Popup>
                     </Marker>
                   ))}
                 </MapContainer>
