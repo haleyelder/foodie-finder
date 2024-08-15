@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import SearchBar from "./SearchBar";
 
-export default function Location({ locations }) {
+export default function LocationList({ locations }) {
   const [location, setLocation] = useState(locations);
   const [toggle, setToggle] = useState(true);
   const [sortDirection, setSortDirection] = useState("Sort");
 
-  const toggleClick = (sort) => {
+// console.log({locations})
+
+const toggleClick = (sort) => {
     setToggle(!toggle);
 
     if (toggle === true) {
