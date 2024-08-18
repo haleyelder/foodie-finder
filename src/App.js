@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import About from "./components/About";
 import LocationList from "./components/LocationList";
 import locationData from "./locations";
-import SearchBar from "./components/SearchBar";
 import headerimg from "./images/header-map.png";
 
 import L from "leaflet";
@@ -66,9 +65,8 @@ function App() {
             </li>
           </ul>
         </header>
-        <SearchBar />
 
-        {/* <div className="tab-content" id="pills-tabContent">
+        <div className="tab-content" id="pills-tabContent">
           <div
             className="tab-pane fade show active"
             id="pills-home"
@@ -83,6 +81,7 @@ function App() {
             >
               <div className="main">
                 <LocationList locations={locationData} className="location" />
+
                 <MapContainer
                   center={position}
                   zoom={zoomLevel}
@@ -114,8 +113,8 @@ function App() {
                 </MapContainer>
               </div>
             </div>
-          </div> */}
-        {/* <div
+          </div>
+          <div
             className="tab-pane"
             id="pills-about"
             role="tabpanel"
@@ -123,7 +122,7 @@ function App() {
           >
             <About />
           </div>
-        </div> */}
+        </div>
 
         <footer>Haley Elder | &copy; {currentYear} </footer>
       </div>

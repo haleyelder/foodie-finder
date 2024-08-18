@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import SearchBar from "./SearchBar";
 
 export default function LocationList({ locations }) {
   const [location, setLocation] = useState(locations);
   const [toggle, setToggle] = useState(true);
   const [sortDirection, setSortDirection] = useState("Sort");
+  const [searchText, setSearchText] = useState("");
 
-// console.log({locations})
-
-const toggleClick = (sort) => {
+  const toggleClick = (sort) => {
     setToggle(!toggle);
 
     if (toggle === true) {
@@ -31,6 +29,54 @@ const toggleClick = (sort) => {
     setSortDirection("Sort");
   };
 
+  function LocationList(props) {
+    const filteredData = location.filter((el) => {
+      if (props.input === "") {
+        return el;
+      } else {
+        return (
+          el.name.toLowerCase().includes(props.input) ||
+          el.type.toLowerCase().includes(props.input)
+        );
+      }
+    });
+    return (
+      <ul>
+        {filteredData.map((location) => (
+          <div key={location.id} className="locations">
+            <div className="location-name">
+              <span className="location-visited">
+                {String(location.visited) === "true" ? "✓" : ""}
+              </span>
+              <strong>{location.name}</strong>{" "}
+              <span className="location-neighborhood">
+                <em> - {location.neighborhood} </em>
+              </span>
+            </div>
+            <div className="location-directions">
+              <a
+                href={"https://www.google.com/maps?daddr=" + location.name}
+                target="_blank"
+                rel="noreferrer"
+              >
+                directions{" "}
+                <i className="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <div className="location-type">
+              <em>{location.type}</em>
+            </div>
+          </div>
+        ))}
+      </ul>
+    );
+  }
+
+  let inputHandler = (e) => {
+    let lowerCaseSearch = e.target.value.toLowerCase();
+
+    setSearchText(lowerCaseSearch);
+  };
 
   return (
     <>
@@ -60,35 +106,12 @@ const toggleClick = (sort) => {
         <div className="sorting-direction">{sortDirection}</div>
       </div>
 
-
+      <div className="searchbar">
+        <input type="text" placeholder="search..." onChange={inputHandler} />
+      </div>
 
       <div className="location-list">
-        {location.map((location) => (
-          <div key={location.id} className="locations">
-            <div className="location-name">
-              <span className="location-visited">
-                {String(location.visited) === "true" ? "✓" : ""}
-              </span>
-              <strong>{location.name}</strong>{" "}
-              <span className="location-neighborhood">
-                <em> - {location.neighborhood} </em>
-              </span>
-            </div>
-            <div className="location-directions">
-              <a
-                href={"https://www.google.com/maps?daddr=" + location.name}
-                target="_blank"
-                rel="noreferrer"
-              >
-                directions{" "}
-                <i className="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-            <div className="location-type">
-              <em>{location.type}</em>
-            </div>
-          </div>
-        ))}
+        <LocationList input={searchText} />
       </div>
     </>
   );

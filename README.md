@@ -13,5 +13,6 @@ Changelog -- V2
 - icon designs updated
 - map marker has same green check mark as locations listing
 - header graphic added
+- search bar added (needs: fallback for 0 items)
 
 V1
