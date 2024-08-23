@@ -23,9 +23,9 @@ function App() {
     <>
       <div>
         <header>
-          <div class="header-graphic">
+          <div className="header-graphic">
             <img
-              class="img-fluid"
+              className="img-fluid"
               src={headerimg}
               alt="Cafe Quest map graphic"
             />
@@ -80,6 +80,7 @@ function App() {
               aria-labelledby="map-tab"
             >
               <div className="main">
+                {/* <SortingHeader/> */}
                 <LocationList locations={locationData} className="location" />
 
                 <MapContainer

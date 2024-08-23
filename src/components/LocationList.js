@@ -40,34 +40,39 @@ export default function LocationList({ locations }) {
         );
       }
     });
+
     return (
       <ul>
-        {filteredData.map((location) => (
-          <div key={location.id} className="locations">
-            <div className="location-name">
-              <span className="location-visited">
-                {String(location.visited) === "true" ? "✓" : ""}
-              </span>
-              <strong>{location.name}</strong>{" "}
-              <span className="location-neighborhood">
-                <em> - {location.neighborhood} </em>
-              </span>
+        {filteredData.length < 1 ? (
+          <p className="no-results"><strong>No Results</strong></p>
+        ) : (
+          filteredData.map((location) => (
+            <div key={location.id} className="locations">
+              <div className="location-name">
+                <span className="location-visited">
+                  {String(location.visited) === "true" ? "✓" : ""}
+                </span>
+                <strong>{location.name}</strong>{" "}
+                <span className="location-neighborhood">
+                  <em> - {location.neighborhood} </em>
+                </span>
+              </div>
+              <div className="location-directions">
+                <a
+                  href={"https://www.google.com/maps?daddr=" + location.name}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  directions{" "}
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+              <div className="location-type">
+                <em>{location.type}</em>
+              </div>
             </div>
-            <div className="location-directions">
-              <a
-                href={"https://www.google.com/maps?daddr=" + location.name}
-                target="_blank"
-                rel="noreferrer"
-              >
-                directions{" "}
-                <i className="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-            <div className="location-type">
-              <em>{location.type}</em>
-            </div>
-          </div>
-        ))}
+          ))
+        )}
       </ul>
     );
   }

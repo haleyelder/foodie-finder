@@ -13,7 +13,7 @@ body {
 }
 
 .leaflet-container {
-  width: 65%;
+  width: 70%;
   height: 80vh;
   display: inline-block;
 }
@@ -111,6 +111,15 @@ header {
 .searchbar input {
   width: 100%;
   margin: 0 0 10px 10px;
+}
+
+.no-results {
+  padding: 8px;
+
+  background-color: #ececec;
+  width:350px;
+  text-align: center;
+
 }
 
 .location-list {
@@ -216,7 +225,7 @@ footer {
   }
   .location-list {
     width: 100%;
-    margin: 1px 0px 10px -33px;
+    /* margin: 1px 0px 10px -20px; */
     height: 50vh;
   }
   .leaflet-container {
