@@ -105,7 +105,7 @@ const data = [
     long: -122.6278,
     type: "coffee",
     neighborhood: "SE",
-    visited: false,
+    visited: true,
   },
   {
     id: 13,
@@ -285,7 +285,7 @@ const data = [
     long: -122.6564,
     type: "restaurant",
     neighborhood: "SE",
-    visited: false
+    visited: true
   },
   {
     id: 33,
