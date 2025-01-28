@@ -1,11 +1,17 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { createClient } from "@supabase/supabase-js";
+import React, { useState, useEffect } from "react";
 
 import About from "./components/About";
 import LocationList from "./components/LocationList";
-import locationData from "./locations";
 import headerimg from "./images/header-map.png";
 
 import L from "leaflet";
+
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseAnonKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const GetIcon = (locationType) => {
   return L.icon({
@@ -15,6 +21,29 @@ const GetIcon = (locationType) => {
 };
 
 function App() {
+  const [places, setPlaces] = useState([]);
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('locations')
+          .select();
+
+        if (error) {
+          console.error('Error fetching data:', error);
+        } else {
+          setPlaces(data);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const position = [45.528144, -122.664013];
   const zoomLevel = 12;
   const currentYear = new Date().getFullYear();
@@ -80,8 +109,11 @@ function App() {
               aria-labelledby="map-tab"
             >
               <div className="main">
-                {/* <SortingHeader/> */}
-                <LocationList locations={locationData} className="location" />
+                {loading ? (
+                  <p>loading...</p>
+                ) : (
+                  <LocationList locations={places} className="location" />
+                )}
 
                 <MapContainer
                   center={position}
@@ -93,7 +125,7 @@ function App() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
 
-                  {locationData.map((location) => (
+                  {places.map((location) => (
                     <Marker
                       key={location.id}
                       position={[location.lat, location.long]}

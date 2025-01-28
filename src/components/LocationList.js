@@ -39,7 +39,8 @@ export default function LocationList({ locations }) {
           el.type.toLowerCase().includes(props.input)
         );
       }
-    });
+    }
+  )
 
     return (
       <ul>
@@ -79,7 +80,6 @@ export default function LocationList({ locations }) {
 
   let inputHandler = (e) => {
     let lowerCaseSearch = e.target.value.toLowerCase();
-
     setSearchText(lowerCaseSearch);
   };
 
